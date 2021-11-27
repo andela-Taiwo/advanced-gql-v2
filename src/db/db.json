@@ -17,8 +17,30 @@
       "avatar": "http",
       "createdAt": 1637740057318,
       "id": "81uFnuUUAjQ5JD85JgFgZ"
+    },
+    {
+      "email": "test@code.com",
+      "password": "paswooror!233",
+      "role": "ADMIN",
+      "verified": false,
+      "avatar": "http",
+      "createdAt": 1638028195440,
+      "id": "bPWtSWRWrW2G1FTbEhzVo"
     }
   ],
-  "posts": [],
+  "posts": [
+    {
+      "message": "First post",
+      "author": "bPWtSWRWrW2G1FTbEhzVo",
+      "createdAt": 1638032264904,
+      "id": "wx6DfIJqXH7wwSWzrYsFM"
+    },
+    {
+      "message": "Second post",
+      "author": "bPWtSWRWrW2G1FTbEhzVo",
+      "createdAt": 1638032390723,
+      "id": "V7pXkXpKEuBx3cKJ8e909"
+    }
+  ],
   "settings": []
 }

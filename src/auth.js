@@ -31,8 +31,7 @@ const getUserFromToken = token => {
  * @param {Function} next next resolver function ro run
  */
 const authenticated = next => (root, args, context, info) => {
-  if(!context.user) throw new Error("Nope")
-  console.log('I got here')
+  if(!context.user) throw new Error("Not Authorzed!")
   return next(root, args, context, info)
 }
 
