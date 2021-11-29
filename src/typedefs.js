@@ -16,6 +16,7 @@ module.exports = gql`
     id: ID!
     email: String!
     avatar: String!
+    error: String!
     verified: Boolean!
     createdAt: String!
     posts: [Post]!
