@@ -5,13 +5,77 @@ Object {
   "data": Object {
     "feed": Array [
       Object {
-        "createdAt": "12345839",
+        "createdAt": "Hello World",
         "id": "1",
-        "likes": 20,
-        "message": "hello",
-        "views": 300,
+        "likes": -85,
+        "message": "Hello World",
+        "views": 79,
       },
     ],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`queries post 1`] = `
+Object {
+  "data": Object {
+    "post": Object {
+      "createdAt": "Hello World",
+      "id": "82030958-2080-49ac-9ff1-68c064d71659",
+      "likes": 11,
+      "message": "Hello World",
+      "views": -25,
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`queries posts 1`] = `
+Object {
+  "data": Object {
+    "posts": Array [
+      Object {
+        "createdAt": "12345839",
+        "id": "2",
+        "likes": 28,
+        "message": "new Post",
+        "views": 30,
+      },
+    ],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`queries userSettings 1`] = `
+Object {
+  "data": Object {
+    "userSettings": Object {
+      "id": "50adba6a-a187-4b67-9938-74a5833fd89b",
+      "user": Object {
+        "email": "Hello World",
+      },
+    },
   },
   "errors": undefined,
   "extensions": undefined,
