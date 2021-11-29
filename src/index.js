@@ -3,6 +3,8 @@ const typeDefs = require('./typedefs')
 const resolvers = require('./resolvers')
 const {createToken, getUserFromToken} = require('./auth')
 const db = require('./db')
+const ServerError = require('./Error');
+
 
 const server = new ApolloServer({
   typeDefs,
@@ -26,6 +28,12 @@ const server = new ApolloServer({
       }
       return {user}
     }
+  },
+  formatError: (err) => {
+    if (err.message.startsWith('Database Error: ')) {
+      return new ServerError('Internal server error');
+    }
+    throw err
   }
 })
 
