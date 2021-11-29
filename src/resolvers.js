@@ -52,7 +52,7 @@ module.exports = {
       const existing = models.User.findOne({email: input.email})
 
       if (existing) {
-        throw new UserInputError('User with email already exist') 
+        throw new AuthenticationError('invalid User with email') 
       }
       const user = models.User.createOne({...input, verified: false, avatar: 'http'})
       const token = createToken(user)
@@ -62,7 +62,7 @@ module.exports = {
       const user = models.User.findOne(input)
 
       if (!user) {
-        throw new AuthenticationError('Wrong username/password')  
+        throw new AuthenticationError('Wrong username/password combo')  
       }
 
       const token = createToken(user)
