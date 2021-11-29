@@ -62,7 +62,7 @@ describe('queries', () => {
       user: {id: 1},
       models: {
         Post: {
-          findMany: jest.fn(() => [{id: 1, user: {}}])
+          findMany: jest.fn(() => [{id: 2, message: 'new Post', createdAt: 12345839, likes: 28, views: 30}])
         }
       }
     })

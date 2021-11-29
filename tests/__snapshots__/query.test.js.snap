@@ -5,11 +5,11 @@ Object {
   "data": Object {
     "feed": Array [
       Object {
-        "createdAt": "Hello World",
-        "id": "1",
-        "likes": -85,
-        "message": "Hello World",
-        "views": 79,
+        "createdAt": "12345839",
+        "id": "2",
+        "likes": 28,
+        "message": "new Post",
+        "views": 30,
       },
     ],
   },
@@ -28,10 +28,10 @@ Object {
   "data": Object {
     "post": Object {
       "createdAt": "Hello World",
-      "id": "82030958-2080-49ac-9ff1-68c064d71659",
-      "likes": 11,
+      "id": "aa22df24-1205-4d61-b51e-fb7bedfb397d",
+      "likes": 58,
       "message": "Hello World",
-      "views": -25,
+      "views": -15,
     },
   },
   "errors": undefined,
@@ -71,7 +71,7 @@ exports[`queries userSettings 1`] = `
 Object {
   "data": Object {
     "userSettings": Object {
-      "id": "50adba6a-a187-4b67-9938-74a5833fd89b",
+      "id": "da2d68cb-2fcf-4d2c-a7d3-653a73d260e5",
       "user": Object {
         "email": "Hello World",
       },
