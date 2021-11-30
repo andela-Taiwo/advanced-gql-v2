@@ -4,11 +4,18 @@ const resolvers = require('./resolvers')
 const {createToken, getUserFromToken} = require('./auth')
 const db = require('./db')
 const ServerError = require('./Error');
+const {LogDirective, AuthenticationDirective, DateDirective, AuthorizationDirective} = require('./customDirectives')
 
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  schemaDirectives: {
+    log: LogDirective,
+    formatDate: DateDirective,
+    auth: AuthenticationDirective,
+    authorized: AuthorizationDirective
+  },
   context({req, connection}) {
   
     if (connection) {  
