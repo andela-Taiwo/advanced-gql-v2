@@ -26,6 +26,15 @@
       "avatar": "http",
       "createdAt": 1638028195440,
       "id": "bPWtSWRWrW2G1FTbEhzVo"
+    },
+    {
+      "email": "h@code.com",
+      "password": "paswooror!233",
+      "role": "MEMBER",
+      "verified": false,
+      "avatar": "http",
+      "createdAt": 1638270741778,
+      "id": "T6Zaoil8B-fPf1MLgOhsS"
     }
   ],
   "posts": [
@@ -40,6 +49,12 @@
       "author": "bPWtSWRWrW2G1FTbEhzVo",
       "createdAt": 1638032390723,
       "id": "V7pXkXpKEuBx3cKJ8e909"
+    },
+    {
+      "message": "frone post",
+      "author": "bPWtSWRWrW2G1FTbEhzVo",
+      "createdAt": 1638257149907,
+      "id": "XTkGzYw-41tHx9vv_H96W"
     }
   ],
   "settings": []

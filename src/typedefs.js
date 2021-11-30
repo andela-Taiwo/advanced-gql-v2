@@ -1,6 +1,10 @@
 const gql = require('graphql-tag')
 
 module.exports = gql`
+  directive @log(message: String = "My story") on FIELD_DEFINITION
+  directive @formatDate(format: String="MMM dd yyyy") on FIELD_DEFINITION
+  directive @auth on  FIELD_DEFINITION
+  directive @authorized(role: Role! = ADMIN) on  FIELD_DEFINITION
   enum Theme {
     DARK
     LIGHT
@@ -13,12 +17,12 @@ module.exports = gql`
   }
 
   type User {
-    id: ID!
+    id: ID! @log
     email: String!
     avatar: String!
     error: String!
     verified: Boolean!
-    createdAt: String!
+    createdAt: String! @formatDate
     posts: [Post]!
     role: Role!
     settings: Settings!
@@ -33,8 +37,8 @@ module.exports = gql`
     id: ID!
     message: String!
     author: User!
-    createdAt: String!
-    likes: Int!
+    createdAt: String! @formatDate
+    likes: Int
     views: Int!
   }
 
@@ -49,7 +53,7 @@ module.exports = gql`
   type Invite {
     email: String!
     from: User!
-    createdAt: String!
+    createdAt: String! @formatDate
     role: Role!
   }
 
@@ -86,18 +90,18 @@ module.exports = gql`
   }
 
   type Query {
-    me: User!
-    posts: [Post]!
-    post(id: ID!): Post!
-    userSettings: Settings!
+    me: User! @auth
+    posts: [Post]! @auth
+    post(id: ID!): Post! @auth
+    userSettings: Settings! @auth
     feed: [Post]!
   }
 
   type Mutation {
     updateSettings(input: UpdateSettingsInput!): Settings!
     createPost(input: NewPostInput!): Post!
-    updateMe(input: UpdateUserInput!): User
-    invite(input: InviteInput!): Invite!
+    updateMe(input: UpdateUserInput!): User @auth
+    invite(input: InviteInput!): Invite! @auth @authorized(role: ADMIN)
     signup(input: SignupInput!): AuthUser!
     signin(input: SigninInput!): AuthUser!
   }
@@ -105,5 +109,4 @@ module.exports = gql`
   type Subscription {
     newPost: Post!
   }
-
 `
